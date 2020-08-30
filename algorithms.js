@@ -13,7 +13,7 @@
 // }
 //
 // twoSums([3,4],6);
-
+//
 // let array = [1,4,2,7,4,8,2,4,7,3,5,7,9];
 //
 // for (let i=0;i<array.length;i++) {
@@ -172,29 +172,45 @@
 
 // ========== SHUFFLE THE ARRAY ========== //
 
-// let shuffle = (array,n) => {
-//
-//   let y = [];
-//
-//   for (let j = 0; j < n; j++) {
-//     y.push(array[j]);
-//     y.push(array[j+1]);
-//   }
-//   return y;
-// }
-//
-// console.log(shuffle([2,5,1,3,4,7],3));
+let shuffle = (array,n) => {
+
+  let x = [];
+  let j = n;
+
+  for (let i = 0; i < n; i++) {
+    x.push(array[i]);
+    x.push(array[j]);
+    j++;
+  }
+  return x;
+}
+
+
+
+console.log(shuffle([2,5,1,3,4,7],3));
 
 // ========== FIBONACCI ========== //
 
-let getNthFib = (n) => {
-  if (n === 2) {
-    return 1
-  } else if (n === 1) {
-    return 0
-  } else {
-    return getNthFib(n-1) + getNthFib(n-2)
-  }
-}
+// let getNthFib = (n) => {
+//   if (n === 2) {
+//     return 1
+//   } else if (n === 1) {
+//     return 0
+//   } else {
+//     return getNthFib(n-1) + getNthFib(n-2)
+//   }
+// }
+//
+// console.log(getNthFib(12));
 
-console.log(getNthFib(12));
+// ========== GENERATE RANDOM NUMBER ========== // ===== NEEDS WORK ===== //
+
+// let rand10 = (self) => {
+//   let rand40 = 40;
+//   while (rand40 >= 40) {
+//     rand40 = (rand7() - 1) * 7 + rand7() - 1
+//   }
+//   return rand40 % 10 + 1
+// }
+//
+// console.log(rand10(1));
