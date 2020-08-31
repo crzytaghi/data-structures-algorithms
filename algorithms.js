@@ -172,22 +172,20 @@
 
 // ========== SHUFFLE THE ARRAY ========== //
 
-let shuffle = (array,n) => {
-
-  let x = [];
-  let j = n;
-
-  for (let i = 0; i < n; i++) {
-    x.push(array[i]);
-    x.push(array[j]);
-    j++;
-  }
-  return x;
-}
-
-
-
-console.log(shuffle([2,5,1,3,4,7],3));
+// let shuffle = (array,n) => {
+//
+//   let x = [];
+//   let j = n;
+//
+//   for (let i = 0; i < n; i++) {
+//     x.push(array[i]);
+//     x.push(array[j]);
+//     j++;
+//   }
+//   return x;
+// }
+//
+// console.log(shuffle([2,5,1,3,4,7],3));
 
 // ========== FIBONACCI ========== //
 
@@ -214,3 +212,27 @@ console.log(shuffle([2,5,1,3,4,7],3));
 // }
 //
 // console.log(rand10(1));
+
+// ========== 2D ARRAY =========== //
+
+// let hourGlassSum = (array) => {
+//
+//   let sum = 0;
+//
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(i);
+//   }
+// }
+
+// ========== ARRAY LEFT ROTATION ========== //
+
+function rotLeft(a, d) {
+    let arr = '';
+    for (let i = 0; i < d; i++) {
+        arr = a.shift();
+        a.push(arr);
+    }
+    return a;
+}
+
+console.log(rotLeft([1,2,3,4,5],4));
