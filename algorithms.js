@@ -226,13 +226,56 @@
 
 // ========== ARRAY LEFT ROTATION ========== //
 
-function rotLeft(a, d) {
-    let arr = '';
-    for (let i = 0; i < d; i++) {
-        arr = a.shift();
-        a.push(arr);
+// function rotLeft(a, d) {
+//     let arr = '';
+//     for (let i = 0; i < d; i++) {
+//         arr = a.shift();
+//         a.push(arr);
+//     }
+//     return a;
+// }
+//
+// console.log(rotLeft([1,2,3,4,5],4));
+
+// ==========  TWO STRINGS ========== //
+
+// Create a function that determines if two strings have similar characters. If so, return YES, if not, return NO
+// Implement a hashmap to lookup through s2 and check if it contains similar characters.
+
+// let twoStrings = (s1,s2) => {
+//   let s1Map = {};
+//
+//   for (let i = 0; i < s1.length; i++) {
+//     const s1Letter = s1[i];
+//     s1Map[s1Letter] = true;
+//   }
+//
+//   for (let i = 0; i < s2.length; i++) {
+//     s2Letter = s2[i]
+//     if (s1Map[s2Letter]) {
+//       return "YES"
+//     }
+//   }
+//   return "NO"
+// }
+//
+// console.log(twoStrings('wouldyoulikefries','abcabcabcabcabcabc'));
+// console.log(twoStrings('hackerrankcommunity','cdecdecdecde'));
+// console.log(twoStrings('jackandjill','wentupthehill'));
+// console.log(twoStrings('writetoyourparents','fghmqzldbc'));
+
+// ========== GRADING STUDENTS ========== //
+// If the students grade rounded up to the nearest 5 is < 3, round up to the nearest 5. If the value below 38 do not round since the score is failing.
+
+let gradingStudents = (grades) => {
+  for (let grade of grades) {
+    console.log(`the value of the students grade is ${grade}`);
+    if (grade < 38 || (Math.ceil(grade/5)*5) - grade >= 3) {
+      console.log(grade);
+    } else if ((Math.ceil(grade/5)*5) - grade < 3) {
+      console.log(Math.ceil(grade/5)*5);
     }
-    return a;
+  }
 }
 
-console.log(rotLeft([1,2,3,4,5],4));
+console.log(gradingStudents([4,73,67,38,33]));
