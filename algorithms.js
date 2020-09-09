@@ -265,17 +265,47 @@
 // console.log(twoStrings('writetoyourparents','fghmqzldbc'));
 
 // ========== GRADING STUDENTS ========== //
-// If the students grade rounded up to the nearest 5 is < 3, round up to the nearest 5. If the value below 38 do not round since the score is failing.
+// If the difference between the students grade and the nearest rounded up to the nearest 5 is < 3, round up to the nearest 5. If the value below 38 do not round since the score is failing.
 
-let gradingStudents = (grades) => {
-  for (let grade of grades) {
-    console.log(`the value of the students grade is ${grade}`);
-    if (grade < 38 || (Math.ceil(grade/5)*5) - grade >= 3) {
-      console.log(grade);
-    } else if ((Math.ceil(grade/5)*5) - grade < 3) {
-      console.log(Math.ceil(grade/5)*5);
-    }
+// let gradingStudents = (grades) => {
+//   for (let grade of grades) {
+//     console.log(`the value of the students grade is ${grade}`);
+//     if (grade < 38 || (Math.ceil(grade/5)*5) - grade >= 3) {
+//       console.log(grade);
+//     } else if ((Math.ceil(grade/5)*5) - grade < 3) {
+//       console.log(Math.ceil(grade/5)*5);
+//     }
+//   }
+// }
+//
+// console.log(gradingStudents([4,73,67,38,33]));
+
+// ========== NEW ARRAY ========== //
+// Output a new array with each repeated value cordinated with the number associated to how many times that value appears.
+// let arr = ['switch', 'tv', 'switch', 'tv', 'switch', 'tv']
+//
+// let hash = {};
+// let newArr = [];
+//
+// for (i of arr) {
+//   arr[i] = (arr[i] || 0) + 1;
+//
+//   if (arr[i] === 1) {
+//     newArr.push(`${i}`);
+//   } else {
+//     newArr.push(`${i}${arr[i] - 1}`);
+//   }
+// }
+//
+// console.log(newArr);
+
+//
+// Given two arrays of strings, determine if the strings at the index values contain similar characters
+
+let twoStrings = (arr1, arr2) => {
+  for (i of arr1) {
+
   }
 }
 
-console.log(gradingStudents([4,73,67,38,33]));
+twoStrings(['hello','hi'],['world','bye']);
