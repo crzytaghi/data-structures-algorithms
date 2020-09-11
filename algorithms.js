@@ -311,7 +311,7 @@
 // twoStrings(['hello','hi'],['world','bye']);
 
 // ========== FLATLAND SPACE STATIONS ========== //
-// Determine the max distance any city is from a space station.
+// Determine the max distance any city is from a space station given n (the lenght of the array) & c (the values at which the space station(s) is/are located)
 
 let flatLandSpaceStations = (n, c) => {
 
