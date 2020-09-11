@@ -302,10 +302,31 @@
 //
 // Given two arrays of strings, determine if the strings at the index values contain similar characters
 
-let twoStrings = (arr1, arr2) => {
-  for (i of arr1) {
+// let twoStrings = (arr1, arr2) => {
+//   for (i of arr1) {
+//
+//   }
+// }
+//
+// twoStrings(['hello','hi'],['world','bye']);
 
-  }
+// ========== FLATLAND SPACE STATIONS ========== //
+// Determine the max distance any city is from a space station.
+
+let flatLandSpaceStations = (n, c) => {
+
+  let distances = [];
+    c.sort((a,b)=>a-b);
+
+    for (let i = 0; i < c.length-1; i++) {
+        const dist = Math.floor(Math.abs(c[i + 1] - c[i]) / 2)
+        distances.push(dist)
+    }
+
+    //find max distances before and after
+    const before = Math.abs(c[0] - 0)
+    const after = Math.abs(n - c[c.length - 1])-1
+    return Math.max(...distances,before,after)
 }
 
-twoStrings(['hello','hi'],['world','bye']);
+console.log(flatLandSpaceStations(5,[0,4]));
