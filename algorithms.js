@@ -189,17 +189,37 @@
 
 // ========== FIBONACCI ========== //
 
-// let getNthFib = (n) => {
-//   if (n === 2) {
-//     return 1
-//   } else if (n === 1) {
-//     return 0
+let getNthFib = (n) => {
+  // O(2^n) time
+  // if (n === 2) {
+  //   return 1
+  // } else if (n === 1) {
+  //   return 0
+  // } else {
+  //   return getNthFib(n-1) + getNthFib(n-2)
+  // }
+
+  // O(n) time and O(1) space.
+
+//   if (n < 0) {
+//     throw new Error('Error, negative number')
+//   } else if (n === 0 || n === 1) {
+//     return n
 //   } else {
-//     return getNthFib(n-1) + getNthFib(n-2)
+//     let prevPrev = 0;
+//     let prev = 1;
+//     let current;
+//
+//     for (let i = 1; i < n; i++) {
+//       current = prev + prevPrev;
+//       prevPrev = prev;
+//       prev = current;
+//     }
+//     return current;
 //   }
 // }
 //
-// console.log(getNthFib(12));
+// console.log(getNthFib(19));
 
 // ========== GENERATE RANDOM NUMBER ========== // ===== NEEDS WORK ===== //
 
