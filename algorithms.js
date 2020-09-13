@@ -191,6 +191,7 @@
 
 let getNthFib = (n) => {
   // O(2^n) time
+  
   // if (n === 2) {
   //   return 1
   // } else if (n === 1) {
