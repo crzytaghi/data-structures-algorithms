@@ -355,19 +355,19 @@
 // ========== FAIR RATIONS ========== //
 // Determine how many loafs of bread must be distributed in order to give all participants an even number of loafs. For every loaf distributed at i, another must be distributed at i+1.
 
-let fairRations = (arr) => {
-  let count = 0;
-  let n = arr.length;
-
-  for (let i = 0; i < n - 1; i++) {
-    if (arr[i] % 2 === 1) {
-      arr[i]++;
-      arr[i+1]++;
-      count += 2;
-    }
-  }
-
-  return arr[n - 1] % 2 === 1 ? 'NO' : count;
-}
-
-console.log(fairRations([1,2]));
+// let fairRations = (arr) => {
+//   let count = 0;
+//   let n = arr.length;
+//
+//   for (let i = 0; i < n - 1; i++) {
+//     if (arr[i] % 2 === 1) {
+//       arr[i]++;
+//       arr[i+1]++;
+//       count += 2;
+//     }
+//   }
+//
+//   return arr[n - 1] % 2 === 1 ? 'NO' : count;
+// }
+//
+// console.log(fairRations([1,2]));
