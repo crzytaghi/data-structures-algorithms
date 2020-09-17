@@ -371,3 +371,21 @@
 // }
 //
 // console.log(fairRations([1,2]));
+
+// ========== TIME CONVERSION ========== //
+
+// Convert the time in 1200 to 2400 given AM and PM.
+
+let timeConversion = (s) => {
+  let AMPM = s.slice(-2);
+    let timeArr = s.slice(0,-2).split(":");
+
+    if (AMPM === "AM" && timeArr[0] === "12") {
+        timeArr[0] = "00"
+    } else if (AMPM === "PM") {
+        timeArr[0] = (timeArr[0] % 12) + 12
+    }
+    return timeArr.join(":");
+}
+
+console.log(timeConversion("07:05:45PM"));
