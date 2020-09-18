@@ -376,16 +376,27 @@
 
 // Convert the time in 1200 to 2400 given AM and PM.
 
-let timeConversion = (s) => {
-  let AMPM = s.slice(-2);
-    let timeArr = s.slice(0,-2).split(":");
+// let timeConversion = (s) => {
+//   let AMPM = s.slice(-2);
+//     let timeArr = s.slice(0,-2).split(":");
+//
+//     if (AMPM === "AM" && timeArr[0] === "12") {
+//         timeArr[0] = "00"
+//     } else if (AMPM === "PM") {
+//         timeArr[0] = (timeArr[0] % 12) + 12
+//     }
+//     return timeArr.join(":");
+// }
+//
+// console.log(timeConversion("07:05:45PM"));
 
-    if (AMPM === "AM" && timeArr[0] === "12") {
-        timeArr[0] = "00"
-    } else if (AMPM === "PM") {
-        timeArr[0] = (timeArr[0] % 12) + 12
+let cavityCheck = (grid) => {
+  for (let i = 1; i < grid.length - 1; i++) {
+        if (grid[i - 1] < grid[i] > grid[i + 1]) {
+            grid[i] = 'X';
+        }
     }
-    return timeArr.join(":");
+    return grid;
 }
 
-console.log(timeConversion("07:05:45PM"));
+console.log(cavityCheck([1,9,1,2]));
