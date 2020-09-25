@@ -421,4 +421,4 @@ let angryProfessor = (k,a) => {
   return (countA >= k) ? 'YES' : 'NO';
 }
 
-console.log(angryProfessor(2,[-1,0,2,4]));
+console.log(angryProfessor(3,[-1,0,2,4,5,-2]));
