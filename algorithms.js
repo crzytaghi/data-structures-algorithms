@@ -390,13 +390,35 @@
 //
 // console.log(timeConversion("07:05:45PM"));
 
-let cavityCheck = (grid) => {
-  for (let i = 1; i < grid.length - 1; i++) {
-        if (grid[i - 1] < grid[i] > grid[i + 1]) {
-            grid[i] = 'X';
-        }
+// ========== CAVITY CHECK ========== //
+// NEED TO COMPLETE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// let cavityCheck = (grid) => {
+//   for (let i of grid) {
+//     let splitGrid = i.split('');
+//   }
+//   for (let i = 1; i < grid.length - 1; i++) {
+//         if (grid[i - 1] < grid[i] > grid[i + 1]) {
+//             grid[i] = 'X';
+//         }
+//     }
+//     return grid;
+// }
+//
+// console.log(cavityCheck([]));
+
+// ========== ANGRY PROFESSOR ========== //
+
+let angryProfessor = (k,a) => {
+  let countA = 0;
+
+  for (var i of a) {
+    if (i <= 0) {
+      countA++;
     }
-    return grid;
+  }
+
+  return (countA >= k) ? 'YES' : 'NO';
 }
 
-console.log(cavityCheck([1,9,1,2]));
+console.log(angryProfessor(2,[-1,0,2,4]));
