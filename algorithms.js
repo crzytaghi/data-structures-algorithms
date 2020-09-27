@@ -409,16 +409,32 @@
 
 // ========== ANGRY PROFESSOR ========== //
 
-let angryProfessor = (k,a) => {
-  let countA = 0;
+// let angryProfessor = (k,a) => {
+//   let countA = 0;
+//
+//   for (var i of a) {
+//     if (i <= 0) {
+//       countA++;
+//     }
+//   }
+//
+//   return (countA >= k) ? 'YES' : 'NO';
+// }
+//
+// console.log(angryProfessor(3,[-1,0,2,4,5,-2]));
 
-  for (var i of a) {
-    if (i <= 0) {
-      countA++;
-    }
+// ========== ATM QUEUE ========== //
+
+let N = [1,2,3];
+let T = 3;
+let A = [2,7,4];
+let arr = [];
+
+for (let i = 0; i < N.length; i++) {
+  if (A[i] < T) {
+    arr.unshift(A[i]);
+  } else if (A[i] > T) {
+    A[i] - T;
+    N.push(A[i]);
   }
-
-  return (countA >= k) ? 'YES' : 'NO';
 }
-
-console.log(angryProfessor(3,[-1,0,2,4,5,-2]));
