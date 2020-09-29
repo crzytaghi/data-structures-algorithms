@@ -423,18 +423,40 @@
 //
 // console.log(angryProfessor(3,[-1,0,2,4,5,-2]));
 
+// ========== *!*!*!*! GOOGLE KICKSTARTER ROUND F !*!*!*!* ========== //
+
 // ========== ATM QUEUE ========== //
 
-let N = [1,2,3];
-let T = 3;
-let A = [2,7,4];
-let arr = [];
+// let N = [1,2,3];
+// let T = 3;
+// let A = [2,7,4];
+// let arr = [];
+//
+// for (let i = 0; i < N.length; i++) {
+//   if (A[i] < T) {
+//     arr.unshift(A[i]);
+//   } else if (A[i] > T) {
+//     A[i] - T;
+//     N.push(A[i]);
+//   }
+// }
 
-for (let i = 0; i < N.length; i++) {
-  if (A[i] < T) {
-    arr.unshift(A[i]);
-  } else if (A[i] > T) {
-    A[i] - T;
-    N.push(A[i]);
+// END OF GOOGLE KICKSTARTER ROUND F //
+
+// ========== VIRAL ADVERTISING ========== //
+
+let viralAdvertising = (n) => {
+  let advertising = 0;
+  let firstPost = 5;
+  let i = 0;
+  while (i < n) {
+    let reposts = Math.floor(firstPost/2);
+    advertising += reposts;
+    let nextPost = reposts * 3;
+    firstPost = nextPost;
+    i++;
   }
+  return advertising;
 }
+
+console.log(viralAdvertising(3));
