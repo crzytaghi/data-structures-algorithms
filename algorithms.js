@@ -445,18 +445,36 @@
 
 // ========== VIRAL ADVERTISING ========== //
 
-let viralAdvertising = (n) => {
-  let advertising = 0;
-  let firstPost = 5;
-  let i = 0;
-  while (i < n) {
-    let reposts = Math.floor(firstPost/2);
-    advertising += reposts;
-    let nextPost = reposts * 3;
-    firstPost = nextPost;
-    i++;
+// let viralAdvertising = (n) => {
+//   let advertising = 0;
+//   let firstPost = 5;
+//   let i = 0;
+//   while (i < n) {
+//     let reposts = Math.floor(firstPost/2);
+//     advertising += reposts;
+//     let nextPost = reposts * 3;
+//     firstPost = nextPost;
+//     i++;
+//   }
+//   return advertising;
+// }
+//
+// console.log(viralAdvertising(3));
+
+// ========== UTOPIAN TREE ========== //
+
+let utopianTree = (n) => {
+  let height = 1;
+  for (let i = 0; i <= n; i++) {
+    if (i === 0) {
+      return 1;
+    } else if (i % 2 !== 0) {
+      height *= 2;
+    } else if (i % 2 === 0) {
+      height++;
+    }
   }
-  return advertising;
+  return height;
 }
 
-console.log(viralAdvertising(3));
+console.log(utopianTree(0));
