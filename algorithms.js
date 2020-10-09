@@ -463,18 +463,35 @@
 
 // ========== UTOPIAN TREE ========== //
 
-let utopianTree = (n) => {
-  let height = 1;
-  for (let i = 0; i <= n; i++) {
-    if (i === 0) {
-      return 1;
-    } else if (i % 2 !== 0) {
-      height *= 2;
-    } else if (i % 2 === 0) {
-      height++;
+// let utopianTree = (n) => {
+//   let height = 1;
+//   for (let i = 0; i <= n; i++) {
+//     if (i === 0) {
+//       return 1;
+//     } else if (i % 2 !== 0) {
+//       height *= 2;
+//     } else if (i % 2 === 0) {
+//       height++;
+//     }
+//   }
+//   return height;
+// }
+//
+// console.log(utopianTree(0));
+
+// ========== FIND DIGIT ---------- //
+
+let findDigit = (n) => {
+  let string = n.toString();
+  let arr = string.split('');
+  let total = 0;
+  for (let i of arr) {
+    if (n % parseInt(i) === 0) {
+      total++;
     }
   }
-  return height;
+  return total;
 }
 
-console.log(utopianTree(0));
+console.log(findDigit(12));
+console.log(findDigit(1012));
