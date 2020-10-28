@@ -481,17 +481,28 @@
 
 // ========== FIND DIGIT ---------- //
 
-let findDigit = (n) => {
-  let string = n.toString();
-  let arr = string.split('');
-  let total = 0;
-  for (let i of arr) {
-    if (n % parseInt(i) === 0) {
-      total++;
-    }
-  }
-  return total;
-}
+// let findDigit = (n) => {
+//   let string = n.toString();
+//   let arr = string.split('');
+//   let total = 0;
+//   for (let i of arr) {
+//     if (n % parseInt(i) === 0) {
+//       total++;
+//     }
+//   }
+//   return total;
+// }
+//
+// console.log(findDigit(12));
+// console.log(findDigit(1012));
 
-console.log(findDigit(12));
-console.log(findDigit(1012));
+// ========== EXTRA LONG FACTORIALS ========== //
+
+let extraLongFactorials = (n) => {
+  n = BigInt(n);
+  let result = BigInt(1);
+  for (let i = n; i > 0; i--) {
+      result *= i;
+  }
+  console.log(result.toString());
+}
