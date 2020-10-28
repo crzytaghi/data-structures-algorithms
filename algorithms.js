@@ -498,11 +498,36 @@
 
 // ========== EXTRA LONG FACTORIALS ========== //
 
-let extraLongFactorials = (n) => {
-  n = BigInt(n);
-  let result = BigInt(1);
-  for (let i = n; i > 0; i--) {
-      result *= i;
+// let extraLongFactorials = (n) => {
+//   n = BigInt(n);
+//   let result = BigInt(1);
+//   for (let i = n; i > 0; i--) {
+//       result *= i;
+//   }
+//   console.log(result.toString());
+// }
+
+// ========== MERGING MEETING TIMES ========== //
+
+const mergeRanges (meetings) => {
+  // Sort the start time
+  const sortedMeetings = meetings.sort((a,b) => {
+    return a.startTime - b.startTime;
+  });
+
+  // Initialize mergedMeetings with the earliest meeting
+  const mergedMeetings = [sortedMeetings[0]];
+
+  for (let i = 1; i < sortedMeetings.length; i++) {
+    const currentMeeting = sortedMeetings[i];
+    const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
+
+    //if the current meetings overlaps with the last merged meeting, use the later end time of the two. 
+    if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
+      lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
+    } else {
+      // Add the current meeting since it doesnt overlap
+      mergedMeetings.push(currentMeeting);
+    }
   }
-  console.log(result.toString());
 }
