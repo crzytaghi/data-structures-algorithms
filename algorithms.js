@@ -509,25 +509,38 @@
 
 // ========== MERGING MEETING TIMES ========== //
 
-const mergeRanges (meetings) => {
-  // Sort the start time
-  const sortedMeetings = meetings.sort((a,b) => {
-    return a.startTime - b.startTime;
-  });
+// const mergeRanges (meetings) => {
+//   // Sort the start time
+//   const sortedMeetings = meetings.sort((a,b) => {
+//     return a.startTime - b.startTime;
+//   });
 
-  // Initialize mergedMeetings with the earliest meeting
-  const mergedMeetings = [sortedMeetings[0]];
+//   // Initialize mergedMeetings with the earliest meeting
+//   const mergedMeetings = [sortedMeetings[0]];
 
-  for (let i = 1; i < sortedMeetings.length; i++) {
-    const currentMeeting = sortedMeetings[i];
-    const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
+//   for (let i = 1; i < sortedMeetings.length; i++) {
+//     const currentMeeting = sortedMeetings[i];
+//     const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
 
-    //if the current meetings overlaps with the last merged meeting, use the later end time of the two. 
-    if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
-      lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
-    } else {
-      // Add the current meeting since it doesnt overlap
-      mergedMeetings.push(currentMeeting);
-    }
-  }
-}
+//     //if the current meetings overlaps with the last merged meeting, use the later end time of the two. 
+//     if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
+//       lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
+//     } else {
+//       // Add the current meeting since it doesnt overlap
+//       mergedMeetings.push(currentMeeting);
+//     }
+//   }
+// }
+
+
+// ========== CHOCOLATE FEAST ========== //
+
+// let chocolateFeast = (n, c, m) => {
+//   /* First you need to determine how many choclate bars you can buy given the money you have and the cost of a chocolate bar */
+//   let wrappers = Math.floor(n/c);
+
+//   /* Then you need to determine how many wrappers you can turn in given how many chocolcate bars you purchased. Divide the number of wrappers by m, wrappers needed for a new bar, minus 1 and take the ceiling of that value. Subtract one from that value and add that number to the number of wrappers bought. */
+//   return wrappers + Math.ceil(wrappers / (m - 1)) - 1; 
+// }
+
+// console.log(chocolateFeast(7,3,2));
