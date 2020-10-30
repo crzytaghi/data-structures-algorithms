@@ -522,7 +522,7 @@
 //     const currentMeeting = sortedMeetings[i];
 //     const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
 
-//     //if the current meetings overlaps with the last merged meeting, use the later end time of the two. 
+//     //if the current meetings overlaps with the last merged meeting, use the later end time of the two.
 //     if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
 //       lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
 //     } else {
@@ -540,7 +540,104 @@
 //   let wrappers = Math.floor(n/c);
 
 //   /* Then you need to determine how many wrappers you can turn in given how many chocolcate bars you purchased. Divide the number of wrappers by m, wrappers needed for a new bar, minus 1 and take the ceiling of that value. Subtract one from that value and add that number to the number of wrappers bought. */
-//   return wrappers + Math.ceil(wrappers / (m - 1)) - 1; 
+//   return wrappers + Math.ceil(wrappers / (m - 1)) - 1;
 // }
 
 // console.log(chocolateFeast(7,3,2));
+
+
+// ========== REVERSE ARRAY OF CHARACTERS ========== //
+
+// let reverseChar = (array) => {
+  // let newArr = [];
+  // let i = 0;
+
+  // while (i < array.length) {
+  //   const lastLetter = array.pop();
+  //   newArr.push(lastLetter);
+  // }
+
+  // return newArr;
+
+  /* Another approach to solving this problem is to swap the first and last characters of the array and then move towards the middle after every iteration. */
+
+//   let leftIndex = 0;
+//   let rightIndex = array.length - 1;
+
+//   while (leftIndex < rightIndex) {
+//     const temp = array[leftIndex];
+//     array[leftIndex] = array[rightIndex];
+//     array[rightIndex] = temp;
+
+//     /* move towards the middle by adding one to leftIndex and subtracting one from rightIndex. */
+//     leftIndex++;
+//     rightIndex--;
+//   }
+// }
+
+// console.log(reverseChar([0,1,2,3,4,5,6,7]));
+
+// ========== PURCHASING SUPPLIES ========== //
+
+/* A manufacture purchases fragile components that must be shipped using expensive containers. The manufacture agrees to provide customers with a freee container of components for returning a certain number of containers. Determine the maximum number of containers a customer can receive given a budget, the cost per container, and the number of empty containers that must be returned for a free container. let scenarios = ['10 2 5', '12 4 4', '6 2 2'] */
+
+// function maximumContainers(scenarios) {
+
+//   //Initially, you need to loop through the array and split each index string into seperate strings of characters. Once you split each index, you can access each nested index value and convert those values into integers. The first index value is the budget, the second index value is the cost, and the third index value is the exchange rate.
+
+//   for (let i = 0; i < scenarios.length; i++) {
+
+//       let array = scenarios[i].split(' ');
+//       // console.log(array);
+//       let n = parseInt(array[0]);
+//       // console.log(n);
+//       let cost = parseInt(array[1]);
+//       // console.log(cost);
+//       let m = parseInt(array[2]);
+//       // console.log(m);
+
+
+//       // Then you need to determine how many whole containers you can purchase given your budget and the cost for a container.
+
+//       let containers = Math.floor(n / cost);
+
+//       //Once you have the total number of whole containers purchased, you need to determine how many empty containers you can return for a new container. Add that value to the total number of containers and determine if you can then again return empty containers for a new container given m.
+
+//       console.log(containers + Math.ceil(containers / (m - 1)) - 1);
+//   }
+// }
+
+// ========== SLOT MACHINE 2.0 ========== //
+
+function slotWheels(history) {
+//    console.log(history);
+   let total = 0;
+   let sortedArray = [];
+   let splitHistory = [];
+
+
+
+   for (let i = 0; i < history.length; i++) {
+       splitHistory = history[i].split(''); // Split each index into a separate array
+       splitHistory.sort(); // Sort each split array
+       sortedArray.push(splitHistory);
+   }
+
+   console.log(splitHistory.length);
+//    console.log(sortedArray);
+
+   for (let k = 0; k < splitHistory.length; k++) {
+       let maxValuesArray = [];
+
+       for (let j = 0; j < sortedArray.length; j++) {
+           maxValuesArray.push(sortedArray[j].pop());
+        //    console.log(maxValuesArray);
+       }
+       let max = Math.max(...maxValuesArray);
+       console.log(max);
+       total += max;
+   }
+
+   console.log(total);
+   return total;
+}
