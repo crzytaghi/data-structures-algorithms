@@ -623,10 +623,9 @@ function slotWheels(history) {
        sortedArray.push(splitHistory);
    }
 
-   console.log(splitHistory.length);
-//    console.log(sortedArray);
+   let lenght = splitHistory.lenght;
 
-   for (let k = 0; k < splitHistory.length; k++) {
+   for (let k = 0; k < lenght; k++) {
        let maxValuesArray = [];
 
        for (let j = 0; j < sortedArray.length; j++) {
