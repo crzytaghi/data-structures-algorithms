@@ -549,15 +549,15 @@
 // ========== REVERSE ARRAY OF CHARACTERS ========== //
 
 // let reverseChar = (array) => {
-  // let newArr = [];
-  // let i = 0;
+//   let newArr = [];
+//   let i = 0;
 
-  // while (i < array.length) {
-  //   const lastLetter = array.pop();
-  //   newArr.push(lastLetter);
-  // }
+//   while (i < array.length) {
+//     const lastLetter = array.pop();
+//     newArr.push(lastLetter);
+//   }
 
-  // return newArr;
+//   return newArr;
 
   /* Another approach to solving this problem is to swap the first and last characters of the array and then move towards the middle after every iteration. */
 
@@ -572,7 +572,7 @@
 //     /* move towards the middle by adding one to leftIndex and subtracting one from rightIndex. */
 //     leftIndex++;
 //     rightIndex--;
-//   }
+  // }
 // }
 
 // console.log(reverseChar([0,1,2,3,4,5,6,7]));
@@ -609,34 +609,29 @@
 
 // ========== SLOT MACHINE 2.0 ========== //
 
-function slotWheels(history) {
-//    console.log(history);
-   let total = 0;
-   let sortedArray = [];
-   let splitHistory = [];
+// function slotWheels(history) {
+//    let total = 0;
+//    let sortedArray = [];
+//    let splitHistory = [];
 
+//    for (let i = 0; i < history.length; i++) {
+//        splitHistory = history[i].split(''); // Split each index into a separate array
+//        splitHistory.sort(); // Sort each split array
+//        sortedArray.push(splitHistory);
+//    }
 
+//    let lenght = splitHistory.lenght;
 
-   for (let i = 0; i < history.length; i++) {
-       splitHistory = history[i].split(''); // Split each index into a separate array
-       splitHistory.sort(); // Sort each split array
-       sortedArray.push(splitHistory);
-   }
+//    for (let k = 0; k < lenght; k++) {
+//        let maxValuesArray = [];
 
-   let lenght = splitHistory.lenght;
+//        for (let j = 0; j < sortedArray.length; j++) {
+//            maxValuesArray.push(sortedArray[j].pop());
+//        }
+//        let max = Math.max(...maxValuesArray);
+//        total += max;
+//    }
 
-   for (let k = 0; k < lenght; k++) {
-       let maxValuesArray = [];
-
-       for (let j = 0; j < sortedArray.length; j++) {
-           maxValuesArray.push(sortedArray[j].pop());
-        //    console.log(maxValuesArray);
-       }
-       let max = Math.max(...maxValuesArray);
-       console.log(max);
-       total += max;
-   }
-
-   console.log(total);
-   return total;
-}
+//    console.log(total);
+//    return total;
+// }
