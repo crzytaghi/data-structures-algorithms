@@ -638,25 +638,25 @@
 
 // ========== REVERSE A STRING ========== //
 
-let reverseString = (message) => {
-  let joinMessage = message.join('').split(' ');
-  let joinMessageLength = joinMessage.length;
+// let reverseString = (message) => {
+//   let joinMessage = message.join('').split(' ');
+//   let joinMessageLength = joinMessage.length;
 
-  let leftIndex = 0;
-  let rightIndex = joinMessageLength - 1;
+//   let leftIndex = 0;
+//   let rightIndex = joinMessageLength - 1;
 
-  while (leftIndex < rightIndex) {
-    const temp = joinMessage[leftIndex];
-    joinMessage[leftIndex] = joinMessage[rightIndex];
-    joinMessage[rightIndex] = temp;
+//   while (leftIndex < rightIndex) {
+//     const temp = joinMessage[leftIndex];
+//     joinMessage[leftIndex] = joinMessage[rightIndex];
+//     joinMessage[rightIndex] = temp;
 
-    leftIndex++;
-    rightIndex--;
-  }
+//     leftIndex++;
+//     rightIndex--;
+//   }
 
-  let reverseWord = joinMessage.join(' ');
+//   let reverseWord = joinMessage.join(' ');
 
-  return reverseWord;
-}
+//   return reverseWord;
+// }
 
-console.log(reverseString([ 'y','u','m','m','y',' ','i','s',' ','c','a','k','e',' ','b','u','n','d','t',' ','c','h','o','c','o','l','a','t','e' ]));
+// console.log(reverseString([ 'y','u','m','m','y',' ','i','s',' ','c','a','k','e',' ','b','u','n','d','t',' ','c','h','o','c','o','l','a','t','e' ]));
